@@ -12,7 +12,8 @@ import scala.io.Source
   */
 object HashTagBot extends TelegramBot with Commands
 	//	with Polling
-	with Webhook {
+	with Webhook
+{
 	override def token: String = Source.fromInputStream(getClass.getResourceAsStream("bot.token")).getLines.next
 
 	override def handleInlineQuery(inlineQuery: InlineQuery): Unit = {
@@ -27,5 +28,5 @@ object HashTagBot extends TelegramBot with Commands
 
 	override def port: Int = 80
 
-	override def webhookUrl: String = "http://telegram-hashtag-bot.herokuapp.com/"
+	override def webhookUrl: String = "https://telegram-hashtag-bot.herokuapp.com"
 }

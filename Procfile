@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/hello/hashtagbot
+worker: target/universal/stage/bin/hashtagbot

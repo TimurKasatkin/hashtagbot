@@ -1,4 +1,4 @@
-import info.mukel.telegrambot4s.api.{Commands, TelegramBot, Webhook}
+import info.mukel.telegrambot4s.api.{Commands, Polling, TelegramBot, Webhook}
 import info.mukel.telegrambot4s.methods.AnswerInlineQuery
 import info.mukel.telegrambot4s.models._
 
@@ -11,8 +11,8 @@ import scala.io.Source
   * @email t.kasatkin@innopolis.ru
   */
 object HashTagBot extends TelegramBot with Commands
-	//	with Polling
-	with Webhook
+		with Polling
+//	with Webhook
 {
 	override def token: String = Source.fromInputStream(getClass.getResourceAsStream("bot.token")).getLines.next
 
@@ -26,7 +26,7 @@ object HashTagBot extends TelegramBot with Commands
 
 	def main(args: Array[String]): Unit = this.run()
 
-	override def port: Int = 80
-
-	override def webhookUrl: String = "https://telegram-hashtag-bot.herokuapp.com"
+//	override def port: Int = 80
+//
+//	override def webhookUrl: String = "https://telegram-hashtag-bot.herokuapp.com"
 }
